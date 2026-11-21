@@ -1,0 +1,26 @@
+/* Dark surfaces on the overview and its shared place cards. */
+:root[data-theme=dark] {
+  --overview-surface: #1c3033;
+  --overview-control: #294549;
+  --overview-text: #edf4ef;
+  --overview-muted: #c2d4cf;
+  --overview-accent: #81e3c7;
+  --overview-line: #587570;
+}
+:root[data-theme=dark] .home-hero {
+  background: linear-gradient(120deg,#213a3d,#172b30);
+  color: var(--overview-text);
+}
+:root[data-theme=dark] .hero-map { background: #172b30; }
+:root[data-theme=dark] :is(.section-buttons button,.button.secondary,.hero-buttons .button:not(.primary),.text-link span,.hero-map-bottom > span,.hero-map-bottom > button) {
+  background: var(--overview-control);
+  color: var(--overview-text);
+  border-color: var(--overview-line);
+}
+:root[data-theme=dark] :is(.section-buttons button,.hero-buttons .button:not(.primary),.hero-map-bottom > button):is(:hover,:focus-visible) {
+  background: #375d60;
+  border-color: var(--overview-accent);
+}
+:root[data-theme=dark] :is(.hero-stats small,.section-strip p,.card-bottom > span,.hero-map-top,.site-footer) { color: var(--overview-muted); }
+:root[data-theme=dark] :is(.category-label,.hero-stat-icon > svg,.hero-stats strong span,.footer-brand,.site-footer > a:last-child) { color: var(--overview-accent); }
+:root[data-theme=dark] :is(.card-bottom,.hero-stats > div) { border-color: var(--overview-line); }

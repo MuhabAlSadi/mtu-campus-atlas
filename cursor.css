@@ -1,0 +1,28 @@
+/* Keep the browser's cursor hotspot and the native text-selection behavior. */
+@media (hover: hover) and (pointer: fine) {
+  :root[data-atlas-cursors] { cursor: var(--cursor-arrow), auto; }
+
+  [data-atlas-cursors] :is(a[href],button:not(:disabled),select,summary,[role="button"],[role="link"]) {
+    cursor: var(--cursor-action), pointer;
+  }
+
+  [data-atlas-cursors] :is(.photo-hit,.place-image) {
+    cursor: var(--cursor-zoom), zoom-in;
+  }
+
+  [data-atlas-cursors] .campus-canvas > canvas {
+    cursor: var(--cursor-grab), grab !important;
+  }
+
+  [data-atlas-cursors] .campus-canvas > canvas[style*="cursor: pointer"] {
+    cursor: var(--cursor-action), pointer !important;
+  }
+
+  [data-atlas-cursors][data-map-dragging] .campus-canvas > canvas {
+    cursor: var(--cursor-drag), grabbing !important;
+  }
+
+  [data-atlas-cursors] :is(input:not([type]),input[type="text"],input[type="search"],textarea,[contenteditable="true"]) { cursor: text; }
+  [data-atlas-cursors] :is(button,input,select,textarea):disabled { cursor: not-allowed; }
+}
+
